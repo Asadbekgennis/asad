@@ -1,0 +1,26 @@
+{% extends 'asad1.html' %}
+
+{% block text %}
+    Ask Questions
+{% endblock %}
+{% block body %}
+    <form action="{{ url_for('ask_question') }}" method="POST">
+        <div class="block">
+            <div class="name_input">
+                <h4>Question</h4>
+                <input type="text" placeholder="Question" name="question_text">
+            </div>
+            <div class="password_input">
+                <h4>Expert</h4>
+                <select class="select" name="expert_id" id="">
+                    {% for get_user in get_users %}
+                        <option value="{{ get_user.id }}">{{ get_user.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="button">
+                <button>Submit</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'asad1.html' %}
+
+{% block body %}
+    {% if get_ask %}
+        <h1>{{ get_ask.questions_text }}</h1>
+
+        <form action="{{ url_for('answer',get_id=get_ask.id) }}" method="post">
+            <textarea name="answer" id="" style="color: red"></textarea>
+        <button type="submit">Submit</button>
+        </form>
+    {% endif %}
+{% endblock %}

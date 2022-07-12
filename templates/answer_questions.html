@@ -1,0 +1,29 @@
+{% extends 'asad1.html' %}
+
+{% block text %}
+    Answer Questions
+{% endblock %}
+{% block body %}
+    <div class="question">
+        {% for question in questions %}
+            <a href="{{ url_for('answer', get_id=question.id) }}" class="question_1">
+                <h2>Question:  {{ question.questions_text }}</h2>
+                <p>Asked by: {{ question.name }}</p>
+            </a>
+        {% endfor %}
+
+
+{##}
+{#        <div class="question_1">#}
+{#            <h2>Question 2</h2>#}
+{#            <p>Asked by: </p>#}
+{##}
+{#        </div>#}
+{##}
+{#        <div class="question_1">#}
+{#            <h2>Question 3</h2>#}
+{#            <p>Asked by: </p>#}
+{##}
+{#        </div>#}
+    </div>
+{% endblock %}

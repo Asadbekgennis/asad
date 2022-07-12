@@ -1,0 +1,9 @@
+.block{
+    display: flex;
+    flex-direction: column;
+}
+.name_input{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}

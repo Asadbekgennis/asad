@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questions&Answers</title>
+
+    <link rel="stylesheet" href="/static/asad1.css">
+</head>
+<body>
+<header>
+    <div class="main">
+        <h1>Questions&Answers</h1>
+        <h4><a href="{{ url_for('main_menu') }}">HOME</a></h4>
+        {% if not user %}
+            <h4><a href="{{ url_for('login') }}">LOGIN</a></h4>
+            <h4><a href="{{ url_for('register') }}">REGISTER</a></h4>
+        {% endif %}
+        {% if user and not user.admin and not user.expert %}
+            <h4><a href="{{ url_for('ask_question') }}">Ask A Questions</a></h4>
+        {% endif %}
+        {% if user.expert %}
+            <h4><a href="{{ url_for('answer_questions') }}">Answer A Questions</a></h4>
+        {% endif %}
+        {% if user.admin %}
+            <h4><a href="{{ url_for('user_setup') }}">USERS</a></h4>
+        {% endif %}
+        {% if user %}
+            <h4><a href="{{ url_for('log_out') }}">LOGOUT</a></h4>
+        {% endif %}
+    </div>
+</header>
+<section class="section1">
+    <div class="section1_main">
+        <h1 class="absolute_text">{% block text %}
+
+        {% endblock %}</h1>
+
+        {% block body %}
+
+        {% endblock %}
+    </div>
+</section>
+
+</body>
+</html>

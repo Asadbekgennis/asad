@@ -1,0 +1,29 @@
+{% extends 'asad1.html' %}
+
+{% block text %}
+    Register
+{% endblock %}
+{% block body %}
+
+
+
+    <form action="{{ url_for('register') }}" method="post">
+
+        <div class="block">
+            <h3>{{ error }}</h3>
+            <div class="name_input">
+                <h4>name</h4>
+                <input type="text" placeholder="nickname" name="name">
+            </div>
+            <div class="password_input">
+                <h4>password</h4>
+                <input type="password" placeholder="password" name="password">
+            </div>
+            <div class="button">
+                <button>Register</button>
+            </div>
+        </div>
+
+    </form>
+
+{% endblock %}

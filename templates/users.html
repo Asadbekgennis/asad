@@ -1,0 +1,18 @@
+{% extends 'asad1.html' %}
+
+
+{% block text %}
+    Users
+{% endblock %}
+
+{% block body %}
+
+    <div class="text">
+
+    {% for employee in user_list %}
+
+        <h1>{{ employee.name }}</h1>
+
+    {% endfor %}
+    </div>
+{% endblock %}
